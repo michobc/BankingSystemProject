@@ -1,0 +1,15 @@
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Application.deps.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Application.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Application.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Domain.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Domain.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.csproj.AssemblyReference.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.AssemblyInfoInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.AssemblyInfo.cs
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.csproj.CoreCompileInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingS.76292F7C.Up2Date
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/refint/BankingSystemProject.Application.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/ref/BankingSystemProject.Application.dll

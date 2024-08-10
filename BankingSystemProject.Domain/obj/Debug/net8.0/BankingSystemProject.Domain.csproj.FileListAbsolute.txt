@@ -1,0 +1,11 @@
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/bin/Debug/net8.0/BankingSystemProject.Domain.deps.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/bin/Debug/net8.0/BankingSystemProject.Domain.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/bin/Debug/net8.0/BankingSystemProject.Domain.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.AssemblyInfoInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.AssemblyInfo.cs
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.csproj.CoreCompileInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/refint/BankingSystemProject.Domain.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/BankingSystemProject.Domain.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/obj/Debug/net8.0/ref/BankingSystemProject.Domain.dll
