@@ -13,3 +13,4 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/refint/BankingSystemProject.Application.dll
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/ref/BankingSystemProject.Application.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.sourcelink.json

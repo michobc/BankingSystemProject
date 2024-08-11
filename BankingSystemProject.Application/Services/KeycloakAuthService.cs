@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using BankingSystemProject.Application.Services.Abstractions;
 using BankingSystemProject.Domain.DTOs;
 using Newtonsoft.Json.Linq;
@@ -49,6 +50,14 @@ public class KeycloakAuthService : IKeycloakAuthService
             {
                 throw new Exception("Authentication failed: Access token not found.");
             }
+            
+            var claims = ExtractClaimsFromToken(accessToken);
+            // You can log or use the claims as needed
+            Console.WriteLine($"User ID: {claims["sub"]}");
+            Console.WriteLine($"Username: {claims["preferred_username"]}");
+            Console.WriteLine($"Email: {claims["email"]}");
+            Console.WriteLine($"Role: {claims["role"]}");
+            Console.WriteLine($"Branch: {claims["branchId"]}");
 
             return accessToken;
         }
@@ -56,5 +65,12 @@ public class KeycloakAuthService : IKeycloakAuthService
         {
             throw new Exception($"An error occurred while authenticating: {ex.Message}", ex);
         }
+    }
+    
+    private static IDictionary<string, string> ExtractClaimsFromToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jwtToken = handler.ReadJwtToken(token);
+        return jwtToken.Claims.ToDictionary(c => c.Type, c => c.Value);
     }
 }

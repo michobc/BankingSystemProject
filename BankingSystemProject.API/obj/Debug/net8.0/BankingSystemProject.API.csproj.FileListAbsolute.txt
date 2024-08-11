@@ -47,3 +47,4 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Domain.dll
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Application.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Domain.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/obj/Debug/net8.0/BankingSystemProject.API.sourcelink.json
