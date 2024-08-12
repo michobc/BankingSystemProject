@@ -2,9 +2,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BankingSystemProject.Domain\BankingSystemProject.Domain.csproj" />
+      <ProjectReference Include="..\BankingSystemProject.Persistence\BankingSystemProject.Persistence.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="MediatR" Version="12.4.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.1" />
     </ItemGroup>

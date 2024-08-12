@@ -1,17 +1,33 @@
 using BankingSystemProject.API.Configurations;
 using BankingSystemProject.API.Settings;
+using BankingSystemProject.Application.Commands;
+using BankingSystemProject.Application.Mappings;
 using BankingSystemProject.Application.Services;
 using BankingSystemProject.Application.Services.Abstractions;
+using BankingSystemProject.Persistence.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// // Register DbContext with Npgsql for PostgreSQL
-// builder.Services.AddDbContext<UniversityContext>(options =>
-// {
-//     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-// });
+// Register DbContext with Npgsql for PostgreSQL
+builder.Services.AddDbContext<BankingSystemContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddHttpContextAccessor();
+
+// Register MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetEmployee).Assembly));
+
+// Register IMemoryCache
+builder.Services.AddMemoryCache();
+
+// Register AutoMapper
+builder.Services.AddAutoMapper(typeof(BankingSystemMappings).Assembly);
 
 // Swagger configuration
 builder.Services.AddSwaggerServices();

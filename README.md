@@ -40,5 +40,8 @@ back all the database transactions or filter for specific transactions of a spec
   - role is also assigned to the user at signup
 ![alt text](images/img1.png)
 
+## Scaffold:
+dotnet ef dbcontext scaffold "Host=localhost;Database=bankingsystemdb;Username=postgres;Password=<pass>" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c BankingSystemContext
+
 # Michel Bou Chahine
 ## inmind.ai

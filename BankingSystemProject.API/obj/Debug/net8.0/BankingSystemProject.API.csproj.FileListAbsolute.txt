@@ -48,3 +48,13 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Application.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Domain.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/obj/Debug/net8.0/BankingSystemProject.API.sourcelink.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/Npgsql.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Persistence.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Persistence.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/AutoMapper.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/MediatR.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/MediatR.Contracts.dll

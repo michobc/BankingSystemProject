@@ -55,7 +55,6 @@ public class KeycloakAuthService : IKeycloakAuthService
             // You can log or use the claims as needed
             Console.WriteLine($"User ID: {claims["sub"]}");
             Console.WriteLine($"Username: {claims["preferred_username"]}");
-            Console.WriteLine($"Email: {claims["email"]}");
             Console.WriteLine($"Role: {claims["role"]}");
             Console.WriteLine($"Branch: {claims["branchId"]}");
 

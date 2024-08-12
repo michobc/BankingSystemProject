@@ -14,3 +14,5 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/ref/BankingSystemProject.Application.dll
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/obj/Debug/net8.0/BankingSystemProject.Application.sourcelink.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Persistence.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/bin/Debug/net8.0/BankingSystemProject.Persistence.pdb
