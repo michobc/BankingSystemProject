@@ -26,8 +26,12 @@ public partial class BankingSystemContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        string schema = _tenantService.GetSchema();
-        optionsBuilder.UseNpgsql($"Host=localhost;Database=bankingsystemdb;Username=postgres;Password=mypass03923367;Search Path={schema}");
+        if (!optionsBuilder.IsConfigured)
+        {
+            // Use default configuration if not already configured
+            string schema = _tenantService.GetSchema();
+            optionsBuilder.UseNpgsql($"Host=localhost;Database=bankingsystemdb;Username=postgres;Password=mypass03923367;Search Path={schema}");
+        }
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

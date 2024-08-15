@@ -9,5 +9,6 @@ public class BankingSystemMappings : Profile
     public BankingSystemMappings()
     {
         CreateMap<User, EmployeeViewModel>();
+        CreateMap<User, CustomerViewModel>();
     }
 }

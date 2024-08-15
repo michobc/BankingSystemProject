@@ -51,6 +51,7 @@ This approach avoids querying the database on every request.
  - Using a Singleton Service: Created a singleton service that holds the tenant information. (ITenantService)
 This service can be injected into your DbContext and used to set the schema for each request.
 
+- BankingSystemContextFactory is implmented with a mock service only to apply some migrations.
 
 # Michel Bou Chahine
 ## inmind.ai

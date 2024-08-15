@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register DbContext
+// Register DbContext with Npgsql for PostgreSQL
 builder.Services.AddDbContext<BankingSystemContext>();
 
 // Register MediatR

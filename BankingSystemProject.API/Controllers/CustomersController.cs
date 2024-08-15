@@ -5,24 +5,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BankingSystemProject.API.Controllers;
 
-
 [ApiController]
-[Route("api/v{version:apiVersion}/employees")]
-public class EmployeesController : ControllerBase
+[Route("api/v{version:apiVersion}/customers")]
+public class CustomersController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public EmployeesController(IMediator mediator)
+    public CustomersController(IMediator mediator)
     {
         _mediator = mediator;
     }
     
     [HttpGet]
-    public async Task<IActionResult> getEmployees()
+    public async Task<IActionResult> getCustomers()
     {
         try
         {
-            List<EmployeeViewModel> employeesViewModel = await _mediator.Send(new GetAllEmployees{});
+            List<CustomerViewModel> employeesViewModel = await _mediator.Send(new GetAllCustomers{});
             return Ok(employeesViewModel);
         }
         catch
@@ -32,12 +31,12 @@ public class EmployeesController : ControllerBase
     }
     
     [HttpGet("{username}")]
-    public async Task<IActionResult> getEmployee(string username)
+    public async Task<IActionResult> getCustomer(string username)
     {
         try
         {
-            EmployeeViewModel employeeViewModel = await _mediator.Send(new GetEmployee { username = username });
-            return Ok(employeeViewModel);
+            CustomerViewModel cutomerViewModel = await _mediator.Send(new GetCustomer { username = username });
+            return Ok(cutomerViewModel);
         }
         catch
         {

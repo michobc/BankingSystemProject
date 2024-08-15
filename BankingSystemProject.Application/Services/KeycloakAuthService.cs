@@ -1,6 +1,7 @@
 using BankingSystemProject.Application.Services.Abstractions;
 using BankingSystemProject.Common.Services;
 using BankingSystemProject.Domain.DTOs;
+using BankingSystemProject.Domain.Models;
 using BankingSystemProject.Persistence.Data;
 using BankingSystemProject.Persistence.Services.Abstractions;
 using Newtonsoft.Json.Linq;
@@ -74,6 +75,18 @@ public class KeycloakAuthService : IKeycloakAuthService
                 _tenantService.SetSchema(claims["branchId"]);
                 _tenantService.setUsername(claims["preferred_username"]);
                 _tenantService.setRole(claims["role"]);
+                var user = _context.Users.FirstOrDefault(u => u.Username == claims["preferred_username"]);
+                if (user == null)
+                {
+                    User newUser = new User
+                    {
+                        Username = claims["preferred_username"],
+                        Role = claims["role"],
+                        BranchName = claims["branchId"],
+                    };
+                    _context.Users.Add(newUser);
+                    _context.SaveChanges();
+                }
                 return accessToken;
             }
         }
