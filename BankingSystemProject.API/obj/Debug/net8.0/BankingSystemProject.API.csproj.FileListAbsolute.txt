@@ -58,3 +58,5 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/AutoMapper.dll
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/MediatR.dll
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/MediatR.Contracts.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Common.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Common.pdb

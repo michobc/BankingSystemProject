@@ -1,5 +1,6 @@
 using BankingSystemProject.Application.Services.Abstractions;
 using BankingSystemProject.Domain.DTOs;
+using BankingSystemProject.Persistence.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankingSystemProject.API.Controllers;
@@ -9,7 +10,7 @@ namespace BankingSystemProject.API.Controllers;
 public class AuthenticationController(IKeycloakAuthService keycloakAuthService) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> login([FromBody] LoginDto request)
+    public async Task<IActionResult> login([FromForm] LoginDto request)
     {
         var auth = await keycloakAuthService.AuthenticateAsync(request);
         return Ok(auth);

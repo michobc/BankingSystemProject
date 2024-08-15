@@ -296,6 +296,14 @@
         }
       },
       "System.Text.Encodings.Web/4.5.0": {},
+      "BankingSystemProject.Common/1.0.0": {
+        "dependencies": {
+          "System.IdentityModel.Tokens.Jwt": "8.0.1"
+        },
+        "runtime": {
+          "BankingSystemProject.Common.dll": {}
+        }
+      },
       "BankingSystemProject.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -307,6 +315,7 @@
       },
       "BankingSystemProject.Persistence/1.0.0": {
         "dependencies": {
+          "BankingSystemProject.Common": "1.0.0",
           "BankingSystemProject.Domain": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "System.IdentityModel.Tokens.Jwt": "8.0.1"
@@ -511,6 +520,11 @@
       "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
+    },
+    "BankingSystemProject.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "BankingSystemProject.Domain/1.0.0": {
       "type": "project",

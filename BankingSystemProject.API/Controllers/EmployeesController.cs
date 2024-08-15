@@ -20,7 +20,14 @@ public class EmployeesController : ControllerBase
     [HttpGet("{username}")]
     public async Task<IActionResult> getEmployee(string username)
     {
-        EmployeeViewModel employeeViewModel = await _mediator.Send(new GetEmployee { username = username });
-        return Ok(employeeViewModel);
+        try
+        {
+            EmployeeViewModel employeeViewModel = await _mediator.Send(new GetEmployee { username = username });
+            return Ok(employeeViewModel);
+        }
+        catch
+        {
+            return NotFound(username);
+        }
     }
 }

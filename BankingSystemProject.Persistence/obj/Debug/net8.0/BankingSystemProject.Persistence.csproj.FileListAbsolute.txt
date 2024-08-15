@@ -16,3 +16,5 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/bin/Debug/net8.0/BankingSystemProject.Domain.pdb
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/obj/Debug/net8.0/BankingS.AF4513EF.Up2Date
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/obj/Debug/net8.0/BankingSystemProject.Persistence.genruntimeconfig.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/bin/Debug/net8.0/BankingSystemProject.Common.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/bin/Debug/net8.0/BankingSystemProject.Common.pdb

@@ -1,42 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using BankingSystemProject.Domain.Models;
-using BankingSystemProject.Persistence.Services;
-using Microsoft.AspNetCore.Http;
+﻿using BankingSystemProject.Domain.Models;
+using BankingSystemProject.Persistence.Services.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankingSystemProject.Persistence.Data;
 
 public partial class BankingSystemContext : DbContext
 {
-    private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly string _schema;
+    private readonly ITenantService _tenantService;
 
-    public BankingSystemContext(DbContextOptions<BankingSystemContext> options,  IHttpContextAccessor httpContextAccessor)
+    public BankingSystemContext(DbContextOptions<BankingSystemContext> options,ITenantService tenantService)
         : base(options)
     {
-        _httpContextAccessor = httpContextAccessor;
-        _schema = GetSchemaForTenant();
-    }
-    
-    private string GetSchemaForTenant()
-    {
-        var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].FirstOrDefault();
-        var claims = ExtractClaimsFromToken(token);
-        return TenantProvider.GetSchemaForTenant(claims["branchId"], this);
-    }
-    
-    private static IDictionary<string, string> ExtractClaimsFromToken(string token)
-    {
-        // Remove "Bearer " prefix if present
-        if (token.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
-        {
-            token = token.Substring("Bearer ".Length).Trim();
-        }
-        var handler = new JwtSecurityTokenHandler();
-        var jwtToken = handler.ReadJwtToken(token);
-        return jwtToken.Claims.ToDictionary(c => c.Type, c => c.Value);
+        _tenantService = tenantService;
     }
 
     public virtual DbSet<Account> Accounts { get; set; }
@@ -51,14 +26,8 @@ public partial class BankingSystemContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (_schema != null)
-        {
-            optionsBuilder.UseNpgsql($"Host=localhost;Database=bankingsystemdb;Username=postgres;Password=mypass03923367;Search Path={_schema}");
-        }
-        else
-        {
-            throw new InvalidOperationException("Schema not set. Ensure tenant context is properly configured.");
-        }
+        string schema = _tenantService.GetSchema();
+        optionsBuilder.UseNpgsql($"Host=localhost;Database=bankingsystemdb;Username=postgres;Password=mypass03923367;Search Path={schema}");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -173,38 +142,4 @@ public partial class BankingSystemContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-}
-
-
-public static class TenantProvider
-{
-    private static Dictionary<string, string> _tenantSchemas = new()
-    {
-        
-    };
-
-    public static string GetSchemaForTenant(string tenantId, BankingSystemContext context)
-    {
-        if (_tenantSchemas.TryGetValue(tenantId, out var schema))
-        {
-            return schema;
-        }
-        // Default schema or handle unknown tenant
-        // await CreateNewBranchAsync(tenantId, context);
-        return "public";
-    }
-    
-    public static async Task CreateNewBranchAsync(string branchName, BankingSystemContext dbContext)
-    {
-        // Create the branch in the branches table
-        var createBranchSql = $"INSERT INTO public.branches (branch_name) VALUES ('{branchName}');";
-        await dbContext.Database.ExecuteSqlRawAsync(createBranchSql);
-
-        // Create schema and tables for the new branch
-        var schemaManagementService = new SchemaManagementService(dbContext);
-        await schemaManagementService.CreateBranchSchemaAsync(branchName);
-
-        // Add the new branch to the tenant schemas
-        _tenantSchemas[branchName] = branchName;
-    }
 }

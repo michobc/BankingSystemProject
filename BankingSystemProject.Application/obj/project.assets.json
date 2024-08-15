@@ -453,6 +453,19 @@
           }
         }
       },
+      "BankingSystemProject.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "System.IdentityModel.Tokens.Jwt": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/BankingSystemProject.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BankingSystemProject.Common.dll": {}
+        }
+      },
       "BankingSystemProject.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -471,6 +484,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BankingSystemProject.Common": "1.0.0",
           "BankingSystemProject.Domain": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "System.IdentityModel.Tokens.Jwt": "8.0.1"
@@ -1155,6 +1169,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BankingSystemProject.Common/1.0.0": {
+      "type": "project",
+      "path": "../BankingSystemProject.Common/BankingSystemProject.Common.csproj",
+      "msbuildProject": "../BankingSystemProject.Common/BankingSystemProject.Common.csproj"
     },
     "BankingSystemProject.Domain/1.0.0": {
       "type": "project",

@@ -40,8 +40,17 @@ back all the database transactions or filter for specific transactions of a spec
   - role is also assigned to the user at signup
 ![alt text](images/img1.png)
 
-## Scaffold:
-dotnet ef dbcontext scaffold "Host=localhost;Database=bankingsystemdb;Username=postgres;Password=<pass>" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c BankingSystemContext
+## dbContext and database:
+dotnet ef dbcontext scaffold "Host=localhost;Database=bankingsystemdb;Username=postgres;Password=<pass>" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c BankingSystemContext 
+#### I want to check the tenant ID only on application startup and not on every request:
+steps:
+ - Initializing Tenant Information at Startup: During application startup, we
+retrieve the tenant information from the database and store it in a static or singleton service. 
+This approach avoids querying the database on every request.
+
+ - Using a Singleton Service: Created a singleton service that holds the tenant information. (ITenantService)
+This service can be injected into your DbContext and used to set the schema for each request.
+
 
 # Michel Bou Chahine
 ## inmind.ai
