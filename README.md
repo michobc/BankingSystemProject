@@ -73,5 +73,18 @@ This service can be injected into your DbContext and used to set the schema for 
 
   3- An employee can add a recurrent transaction and link it to a client account.
 
+## Health Check:
+- Microsoft.Extensions.Diagnostics.HealthChecks
+- AspNetCore.HealthChecks.Npgsql
+- AspNetCore.HealthChecks.Network
+- AspNetCore.HealthChecks.UI
+- AspNetCore.HealthChecks.UI.InMemory.Storage
+- AspNetCore.HealthChecks.UI.Client
+- AspNetCore.HealthChecks.UI.Data
+- AspNetCore.HealthChecks.UI.Core
+- AspNetCore.HealthChecks.Uris
+
+
+
 # Michel Bou Chahine
 ## inmind.ai

@@ -8,6 +8,8 @@ using BankingSystemProject.Common.Services;
 using BankingSystemProject.Persistence.Data;
 using BankingSystemProject.Persistence.Services;
 using BankingSystemProject.Persistence.Services.Abstractions;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -53,6 +55,14 @@ builder.Services.AddScoped<IGetAllAccountsService, GetAllAccountsService>();
 builder.Services.AddScoped<TokenExtractor>();
 builder.Services.AddHttpContextAccessor();
 
+// Register Health Checks
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+// Register HealthChecks UI
+builder.Services.AddHealthChecksUI()
+    .AddInMemoryStorage();
+
 // Swagger configuration
 builder.Services.AddSwaggerServices();
 builder.Services.AddAuthenticationServices(builder.Configuration);
@@ -94,5 +104,18 @@ app.UseHttpsRedirection();
 app.UseAuthenticationServices();
 
 app.MapControllers();
+
+// Map Health Check endpoints
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecksUI(setup =>
+{
+    setup.UIPath = "/health-ui";
+    setup.ApiPath = "/health-ui-api";
+});
 
 app.Run();
