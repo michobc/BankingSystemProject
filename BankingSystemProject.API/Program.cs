@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Register DbContext with Npgsql for PostgreSQL
 builder.Services.AddDbContext<BankingSystemContext>();
+builder.Services.AddScoped<DbContextFactory>();
 
 // Register MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
@@ -48,6 +49,7 @@ builder.Services.AddApiVersioning(options =>
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<IKeycloakAuthService, KeycloakAuthService>();
 builder.Services.AddSingleton<ITenantService, TenantService>();
+builder.Services.AddScoped<IGetAllAccountsService, GetAllAccountsService>();
 builder.Services.AddScoped<TokenExtractor>();
 builder.Services.AddHttpContextAccessor();
 

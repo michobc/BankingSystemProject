@@ -75,7 +75,7 @@ public class KeycloakAuthService : IKeycloakAuthService
                 _tenantService.SetSchema(claims["branchId"]);
                 _tenantService.setUsername(claims["preferred_username"]);
                 _tenantService.setRole(claims["role"]);
-                var user = _context.Users.FirstOrDefault(u => u.Username == claims["preferred_username"]);
+                var user = _context.Users.FirstOrDefault(u => u.Username == claims["preferred_username"] && u.BranchName == claims["branchId"]);
                 if (user == null)
                 {
                     User newUser = new User

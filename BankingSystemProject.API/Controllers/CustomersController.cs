@@ -1,5 +1,6 @@
 using BankingSystemProject.Application.Commands;
 using BankingSystemProject.Application.ViewModels;
+using BankingSystemProject.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,34 @@ public class CustomersController : ControllerBase
         {
             CustomerViewModel cutomerViewModel = await _mediator.Send(new GetCustomer { username = username });
             return Ok(cutomerViewModel);
+        }
+        catch
+        {
+            return NotFound(username);
+        }
+    }
+    
+    [HttpPost("create-account")]
+    public async Task<IActionResult> CreateAccount([FromForm] CreateAccount command)
+    {
+        try
+        {
+            await _mediator.Send(command, CancellationToken.None);
+            return Ok("Account created successfully.");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+    
+    [HttpGet("all-accounts/{username}")]
+    public async Task<IActionResult> getAccounts(string username)
+    {
+        try
+        {
+            List<AccountViewModel> accountsViewModel = await _mediator.Send(new GetAllAccounts { username = username });
+            return Ok(accountsViewModel);
         }
         catch
         {

@@ -26,9 +26,10 @@ public class GetCustomerHandler : IRequestHandler<GetCustomer, CustomerViewModel
     {
         var username = request.username;
         
-        if (!_cache.TryGetValue($"Customer_{username}", out CustomerViewModel cutomerViewModel))
-        {
+        // if (!_cache.TryGetValue($"Customer_{username}", out CustomerViewModel cutomerViewModel))
+        // {
             var customer = await _context.Users
+                .Include(u => u.Accounts)
                 .Where(u => u.Role == "Customer" && u.Username == username)
                 .SingleOrDefaultAsync(cancellationToken);
             
@@ -37,11 +38,11 @@ public class GetCustomerHandler : IRequestHandler<GetCustomer, CustomerViewModel
                 throw new Exception("No customer with this username found");
             }
             var customerView = _mapper.Map<CustomerViewModel>(customer);
-            _cache.Set($"Customer_{username}", customerView, _cacheDuration);
-            Console.WriteLine("added to cache");
+            // _cache.Set($"Customer_{username}", customerView, _cacheDuration);
+            // Console.WriteLine("added to cache");
             return customerView;
-        }
-        Console.WriteLine("From cache");
-        return cutomerViewModel;
+        // }
+        // Console.WriteLine("From cache");
+        // return cutomerViewModel;
     }
 }

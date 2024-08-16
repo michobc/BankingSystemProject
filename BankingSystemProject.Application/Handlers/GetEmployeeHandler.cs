@@ -25,9 +25,9 @@ public class GetEmployeeHandler: IRequestHandler<GetEmployee, EmployeeViewModel>
     public async Task<EmployeeViewModel> Handle(GetEmployee request, CancellationToken cancellationToken)
     {
         var username = request.username;
-        
-        if (!_cache.TryGetValue($"Employee_{username}", out EmployeeViewModel employeeViewModel))
-        {
+        //
+        // if (!_cache.TryGetValue($"Employee_{username}", out EmployeeViewModel employeeViewModel))
+        // {
             var Employee = await _context.Users
                 .Where(u => u.Role == "Employee" && u.Username == username)
                 .SingleOrDefaultAsync(cancellationToken);
@@ -37,11 +37,11 @@ public class GetEmployeeHandler: IRequestHandler<GetEmployee, EmployeeViewModel>
                 throw new Exception("No Employee found");
             }
             var employeeView = _mapper.Map<EmployeeViewModel>(Employee);
-            _cache.Set($"Employee_{username}", employeeView, _cacheDuration);
-            Console.WriteLine("added to cache");
+            // _cache.Set($"Employee_{username}", employeeView, _cacheDuration);
+            // Console.WriteLine("added to cache");
             return employeeView;
-        }
-        Console.WriteLine("From cache");
-        return employeeViewModel;
+        // }
+        // Console.WriteLine("From cache");
+        // return employeeViewModel;
     }
 }

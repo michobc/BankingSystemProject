@@ -30,6 +30,7 @@ public partial class BankingSystemContext : DbContext
         {
             // Use default configuration if not already configured
             string schema = _tenantService.GetSchema();
+            Console.WriteLine($"Using schema: {schema}");
             optionsBuilder.UseNpgsql($"Host=localhost;Database=bankingsystemdb;Username=postgres;Password=mypass03923367;Search Path={schema}");
         }
     }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BankingSystemProject.Domain.Models;
+﻿namespace BankingSystemProject.Domain.Models;
 
 public partial class User
 {
