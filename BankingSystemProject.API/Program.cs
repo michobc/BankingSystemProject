@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,9 +56,21 @@ builder.Services.AddScoped<IGetAllAccountsService, GetAllAccountsService>();
 builder.Services.AddScoped<TokenExtractor>();
 builder.Services.AddHttpContextAccessor();
 
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.MongoDB(databaseUrl: builder.Configuration.GetConnectionString("MongoDBConnection"),
+        collectionName: "logs")
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
 // Register Health Checks
 builder.Services.AddHealthChecks()
-    .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .AddMongoDb(mongodbConnectionString: builder.Configuration.GetConnectionString("MongoDBConnection"),
+        name: "mongodb"
+    );
 
 // Register HealthChecks UI
 builder.Services.AddHealthChecksUI()

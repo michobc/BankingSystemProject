@@ -83,8 +83,17 @@ This service can be injected into your DbContext and used to set the schema for 
 - AspNetCore.HealthChecks.UI.Data
 - AspNetCore.HealthChecks.UI.Core
 - AspNetCore.HealthChecks.Uris
+
 ![alt text](images/img2.png)
 
+### Serilog : logging to mongodb:
+packages:
+- Serilog.AspNetCore
+- Serilog.Sinks.MongoDB
+
+![alt text](images/img3.png)
+
+![alt text](images/img4.png)
 
 # Michel Bou Chahine
 ## inmind.ai
