@@ -83,7 +83,7 @@ This service can be injected into your DbContext and used to set the schema for 
 - AspNetCore.HealthChecks.UI.Data
 - AspNetCore.HealthChecks.UI.Core
 - AspNetCore.HealthChecks.Uris
-
+![alt text](images/img2.png)
 
 
 # Michel Bou Chahine
