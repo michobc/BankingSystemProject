@@ -72,4 +72,18 @@ public class CustomersController : ControllerBase
             return NotFound(username);
         }
     }
+    
+    [HttpPost("create-transaction")]
+    public async Task<IActionResult> CreateTransaction([FromForm] CreateTransaction command)
+    {
+        try
+        {
+            var transactionViewModel = await _mediator.Send(command, CancellationToken.None);
+            return Ok(transactionViewModel);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

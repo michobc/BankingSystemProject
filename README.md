@@ -69,7 +69,11 @@ This service can be injected into your DbContext and used to set the schema for 
 - create account for customer in any branch of the bank (ex: customer in branch A go to employee in branch A => can create account for this customer in branch A and all others) --done
 - NB: Customer that have accounts registered in branches other than there initial one will be added to the db of the new branch where the account is present (foe account reference)
 
-  2- A customer can add a transaction to one of his accounts: Transactions can be a withdrawal or a deposit
+  2- A customer can add a transaction to one of his accounts: Transactions can be a withdrawal or a deposit --finished
+
+- this implementation involves a customer to log in --done
+- customer can deposit or withdrawal to any of HIS accounts on ANY BRANCH even not his initial one (case of ATM in any branch of the bank) --done
+#### - NB Added FEATURE: Customer can TRANSFER Amount from his accounts to another on any branch ---IN Progress
 
   3- An employee can add a recurrent transaction and link it to a client account.
 
