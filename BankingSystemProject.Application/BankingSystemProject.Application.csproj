@@ -3,6 +3,7 @@
     <ItemGroup>
       <ProjectReference Include="..\BankingSystemProject.Domain\BankingSystemProject.Domain.csproj" />
       <ProjectReference Include="..\BankingSystemProject.Persistence\BankingSystemProject.Persistence.csproj" />
+      <ProjectReference Include="..\BankingSystemProject.Infrastructure\BankingSystemProject.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>

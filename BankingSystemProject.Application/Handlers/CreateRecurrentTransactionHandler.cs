@@ -1,11 +1,15 @@
+using System.Text;
 using BankingSystemProject.Application.Commands;
 using BankingSystemProject.Application.ViewModels;
 using BankingSystemProject.Common.Services;
 using BankingSystemProject.Domain.Models;
+using BankingSystemProject.Infrastructure.Services;
 using BankingSystemProject.Persistence.Data;
 using BankingSystemProject.Persistence.Services.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
 
 namespace BankingSystemProject.Application.Handlers;
 
@@ -15,13 +19,15 @@ public class CreateRecurrentTransactionHandler : IRequestHandler<CreateRecurrent
     private readonly ITenantService _tenantService;
     private readonly BankingSystemContext _context;
     private readonly CalculatNextTransactionDate _calculat;
+    private readonly RabbitMqService _rabbitMqService;
     
-    public CreateRecurrentTransactionHandler(DbContextFactory dbContextFactory, ITenantService tenantService, BankingSystemContext context, CalculatNextTransactionDate calculat)
+    public CreateRecurrentTransactionHandler(DbContextFactory dbContextFactory, ITenantService tenantService, BankingSystemContext context, CalculatNextTransactionDate calculat, RabbitMqService rabbitMqService)
     {
         _dbContextFactory = dbContextFactory;
         _context = context;
         _tenantService = tenantService;
         _calculat = calculat;
+        _rabbitMqService = rabbitMqService;
     }
 
     public async Task<RecurrenttransactionViewModel> Handle(CreateRecurrentTransaction request, CancellationToken cancellationToken)
@@ -75,6 +81,31 @@ public class CreateRecurrentTransactionHandler : IRequestHandler<CreateRecurrent
         await context.SaveChangesAsync(cancellationToken);
         
         _tenantService.SetSchema(defaultSchema);
+        
+        // Publish message to RabbitMQ
+        var channel = _rabbitMqService.GetChannel();
+        if (channel == null)
+        {
+            throw new Exception("RabbitMQ channel is not initialized.");
+        }
+
+        var message = JsonConvert.SerializeObject(new
+        {
+            Accountid = recurrenttransaction.Accountid,
+            Amount = recurrenttransaction.Amount,
+            Transactiontype = recurrenttransaction.Transactiontype,
+            Createdat = recurrenttransaction.Createdat,
+            Frequency = recurrenttransaction.Frequency,
+            Nexttransactiondate = recurrenttransaction.Nexttransactiondate,
+            Recurrenttransactionid = recurrenttransaction.Recurrenttransactionid,
+            Branchid = request.BranchId
+        });
+
+        var body = Encoding.UTF8.GetBytes(message);
+        channel.BasicPublish(exchange: "",
+            routingKey: "recurrent_transactions",
+            basicProperties: null,
+            body: body);
 
         return new RecurrenttransactionViewModel
         {

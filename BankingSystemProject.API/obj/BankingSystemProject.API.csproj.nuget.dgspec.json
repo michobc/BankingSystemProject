@@ -173,6 +173,9 @@
               "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/BankingSystemProject.Domain.csproj": {
                 "projectPath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Domain/BankingSystemProject.Domain.csproj"
               },
+              "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/BankingSystemProject.Infrastructure.csproj": {
+                "projectPath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/BankingSystemProject.Infrastructure.csproj"
+              },
               "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/BankingSystemProject.Persistence.csproj": {
                 "projectPath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Persistence/BankingSystemProject.Persistence.csproj"
               }
