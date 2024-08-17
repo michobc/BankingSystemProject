@@ -1,0 +1,13 @@
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/bin/Debug/net8.0/BankingSystemProject.Infrastructure.deps.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/bin/Debug/net8.0/BankingSystemProject.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/bin/Debug/net8.0/BankingSystemProject.Infrastructure.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.csproj.AssemblyReference.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.AssemblyInfoInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.AssemblyInfo.cs
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.sourcelink.json
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/refint/BankingSystemProject.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/BankingSystemProject.Infrastructure.pdb
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/obj/Debug/net8.0/ref/BankingSystemProject.Infrastructure.dll

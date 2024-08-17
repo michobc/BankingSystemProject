@@ -19,6 +19,7 @@
           "AspNetCore.HealthChecks.Uris": "8.0.1",
           "AutoMapper": "13.0.1",
           "BankingSystemProject.Application": "1.0.0",
+          "BankingSystemProject.Infrastructure": "1.0.0",
           "BankingSystemProject.Persistence": "1.0.0",
           "MediatR": "12.4.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7",
@@ -491,7 +492,7 @@
           "Microsoft.CodeAnalysis.Common": "4.5.0",
           "System.Composition": "6.0.0",
           "System.IO.Pipelines": "6.0.3",
-          "System.Threading.Channels": "6.0.0"
+          "System.Threading.Channels": "7.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll": {
@@ -977,6 +978,18 @@
           }
         }
       },
+      "RabbitMQ.Client/6.8.1": {
+        "dependencies": {
+          "System.Memory": "4.5.5",
+          "System.Threading.Channels": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.8.1.0"
+          }
+        }
+      },
       "Serilog/3.1.1": {
         "runtime": {
           "lib/net7.0/Serilog.dll": {
@@ -1304,7 +1317,7 @@
           }
         }
       },
-      "System.Threading.Channels/6.0.0": {},
+      "System.Threading.Channels/7.0.0": {},
       "YamlDotNet/13.3.1": {
         "runtime": {
           "lib/net7.0/YamlDotNet.dll": {
@@ -1350,6 +1363,15 @@
         },
         "runtime": {
           "BankingSystemProject.Domain.dll": {}
+        }
+      },
+      "BankingSystemProject.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "RabbitMQ.Client": "6.8.1"
+        },
+        "runtime": {
+          "BankingSystemProject.Infrastructure.dll": {}
         }
       },
       "BankingSystemProject.Persistence/1.0.0": {
@@ -1931,6 +1953,13 @@
       "path": "prometheus-net/8.0.1",
       "hashPath": "prometheus-net.8.0.1.nupkg.sha512"
     },
+    "RabbitMQ.Client/6.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jNsmGgmCNw2S/NzskeN2ijtGywtH4Sk/G6jWUTD5sY9SrC27Xz6BsLIiB8hdsfjeyWCa4j4GvCIGkpE8wrjU1Q==",
+      "path": "rabbitmq.client/6.8.1",
+      "hashPath": "rabbitmq.client.6.8.1.nupkg.sha512"
+    },
     "Serilog/3.1.1": {
       "type": "package",
       "serviceable": true,
@@ -2204,12 +2233,12 @@
       "path": "system.text.json/8.0.4",
       "hashPath": "system.text.json.8.0.4.nupkg.sha512"
     },
-    "System.Threading.Channels/6.0.0": {
+    "System.Threading.Channels/7.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TY8/9+tI0mNaUMgntOxxaq2ndTkdXqLSxvPmas7XEqOlv9lQtB7wLjYGd756lOaO7Dvb5r/WXhluM+0Xe87v5Q==",
-      "path": "system.threading.channels/6.0.0",
-      "hashPath": "system.threading.channels.6.0.0.nupkg.sha512"
+      "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
+      "path": "system.threading.channels/7.0.0",
+      "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
     },
     "YamlDotNet/13.3.1": {
       "type": "package",
@@ -2236,6 +2265,11 @@
       "sha512": ""
     },
     "BankingSystemProject.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BankingSystemProject.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -12,6 +12,8 @@ public partial class Account
     public decimal Balance { get; set; }
 
     public DateTime? CreatedAt { get; set; }
+    
+    public virtual ICollection<Recurrenttransaction> Recurrenttransactions { get; set; } = new List<Recurrenttransaction>();
 
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 

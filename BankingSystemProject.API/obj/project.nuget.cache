@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+LC3xcO5LyjBJWpyfV5391Wlf2C2YcWEHqbRhXL1+8GRihImcq3/R1IpZMbqnMFBYC0yD1FHcAqao+9iFftBww==",
+  "dgSpecHash": "65Txy6fUDFxVJYBi8b7pPw9Fb/td/0ja4InwcyEo+bebX/+1Vye4PXCe5utGwmLwBVz625ekTasl7QJ7zCYkpg==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/BankingSystemProject.API.csproj",
   "expectedPackageFiles": [
@@ -84,6 +84,7 @@
     "/Users/michelbouchahine/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.4/npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/prometheus-net/8.0.1/prometheus-net.8.0.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/serilog/3.1.1/serilog.3.1.1.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/serilog.aspnetcore/8.0.2/serilog.aspnetcore.8.0.2.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/serilog.extensions.hosting/8.0.0/serilog.extensions.hosting.8.0.0.nupkg.sha512",
@@ -123,7 +124,7 @@
     "/Users/michelbouchahine/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/system.text.json/8.0.4/system.text.json.8.0.4.nupkg.sha512",
-    "/Users/michelbouchahine/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/yamldotnet/13.3.1/yamldotnet.13.3.1.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/zstdsharp.port/0.6.2/zstdsharp.port.0.6.2.nupkg.sha512"
   ],

@@ -86,4 +86,18 @@ public class CustomersController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    [HttpPost("create-recurrent-transaction")]
+    public async Task<IActionResult> CreateRecurrentTransaction([FromForm] CreateRecurrentTransaction command)
+    {
+        try
+        {
+            var recurrentTransactionViewModel = await _mediator.Send(command, CancellationToken.None);
+            return Ok(recurrentTransactionViewModel);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

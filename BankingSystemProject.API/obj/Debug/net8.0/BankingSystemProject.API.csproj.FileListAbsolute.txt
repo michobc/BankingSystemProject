@@ -175,3 +175,6 @@
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/runtimes/linux/native/libmongocrypt.so
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/runtimes/osx/native/libmongocrypt.dylib
 /Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/runtimes/win/native/mongocrypt.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/RabbitMQ.Client.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.API/bin/Debug/net8.0/BankingSystemProject.Infrastructure.pdb

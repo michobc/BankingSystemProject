@@ -77,6 +77,22 @@ This service can be injected into your DbContext and used to set the schema for 
 
   3- An employee can add a recurrent transaction and link it to a client account.
 
+- for this section I'll be creating an independent microservice for better scalability and resilience (ability to recover from failures and continue operating)
+## I'll be using RabbitMQ for these reasons:
+- When an employee adds a recurrent transaction, the main API sends a message to RabbitMQ. 
+The recurrent transaction microservice then consumes this message and processes it independently. 
+If the microservice is down, the message stays in RabbitMQ until the service is back online. 
+This setup is resilient and scales well because both services can operate and scale independently.
+
+- Using grpc will cause some problems; if the microservice is down, the request fails immediately, 
+potentially causing issues in the system.
+
+In the main API => employee will create a recurrent transaction for a customer account (the account specified could be on any branch of the bank) --done
+
+This recurrent transaction will be queued to the microservice, added to its database and will update the recurrent transaction when its time.
+The system will DAILY check to execute recurrent transactions --in progress
+
+
 ## Health Check:
 - Microsoft.Extensions.Diagnostics.HealthChecks
 - AspNetCore.HealthChecks.Npgsql

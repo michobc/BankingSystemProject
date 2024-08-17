@@ -5,6 +5,7 @@ using BankingSystemProject.Application.Mappings;
 using BankingSystemProject.Application.Services;
 using BankingSystemProject.Application.Services.Abstractions;
 using BankingSystemProject.Common.Services;
+using BankingSystemProject.Infrastructure.Services;
 using BankingSystemProject.Persistence.Data;
 using BankingSystemProject.Persistence.Services;
 using BankingSystemProject.Persistence.Services.Abstractions;
@@ -54,7 +55,10 @@ builder.Services.AddScoped<IKeycloakAuthService, KeycloakAuthService>();
 builder.Services.AddSingleton<ITenantService, TenantService>();
 builder.Services.AddScoped<IGetAllAccountsService, GetAllAccountsService>();
 builder.Services.AddScoped<TokenExtractor>();
+builder.Services.AddScoped<CalculatNextTransactionDate>();
 builder.Services.AddHttpContextAccessor();
+// Register RabbitMQ service
+builder.Services.AddSingleton<RabbitMqService>();
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()

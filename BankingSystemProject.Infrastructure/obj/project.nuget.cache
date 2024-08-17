@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "1FZ9EUDqC3m7pSg+wnDDjgOuqgeiTKXNtzP9QwSFcrJ/A/cevfp9gCobAj7wTOYOISZycET8y23qyzepqSOaXw==",
+  "dgSpecHash": "132MuUWtxFXZThbbnWprO6E01n/9bEVr0UVv5dCtVKwMeVESMF3U3N48xqpOM15p6lRD/nuMW5OULohyk8ySaQ==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Infrastructure/BankingSystemProject.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

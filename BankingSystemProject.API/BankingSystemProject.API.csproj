@@ -31,6 +31,7 @@
     <ItemGroup>
       <ProjectReference Include="..\BankingSystemProject.Application\BankingSystemProject.Application.csproj" />
       <ProjectReference Include="..\BankingSystemProject.Persistence\BankingSystemProject.Persistence.csproj" />
+      <ProjectReference Include="..\BankingSystemProject.Infrastructure\BankingSystemProject.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
