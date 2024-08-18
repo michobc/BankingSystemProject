@@ -1,7 +1,7 @@
 using BankingSystemProject.Application.Commands;
 using BankingSystemProject.Application.ViewModels;
-using BankingSystemProject.Domain.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankingSystemProject.API.Controllers;
@@ -17,12 +17,13 @@ public class CustomersController : ControllerBase
         _mediator = mediator;
     }
     
-    [HttpGet]
-    public async Task<IActionResult> getCustomers()
+    [Authorize(Roles = "admin, Employee")]
+    [HttpGet("{branch}")]
+    public async Task<IActionResult> getCustomers(string branch)
     {
         try
         {
-            List<CustomerViewModel> employeesViewModel = await _mediator.Send(new GetAllCustomers{});
+            List<CustomerViewModel> employeesViewModel = await _mediator.Send(new GetAllCustomers{ branch = branch });
             return Ok(employeesViewModel);
         }
         catch
@@ -31,12 +32,13 @@ public class CustomersController : ControllerBase
         }
     }
     
-    [HttpGet("{username}")]
-    public async Task<IActionResult> getCustomer(string username)
+    [Authorize(Roles = "admin, Employee")]
+    [HttpGet("{branch}/{username}")]
+    public async Task<IActionResult> getCustomer(string username, string branch)
     {
         try
         {
-            CustomerViewModel cutomerViewModel = await _mediator.Send(new GetCustomer { username = username });
+            CustomerViewModel cutomerViewModel = await _mediator.Send(new GetCustomer { username = username, branch = branch });
             return Ok(cutomerViewModel);
         }
         catch
@@ -45,6 +47,7 @@ public class CustomersController : ControllerBase
         }
     }
     
+    [Authorize(Roles = "admin, Employee")]
     [HttpPost("create-account")]
     public async Task<IActionResult> CreateAccount([FromForm] CreateAccount command)
     {
@@ -59,6 +62,7 @@ public class CustomersController : ControllerBase
         }
     }
     
+    [Authorize(Roles = "admin, Employee")]
     [HttpGet("all-accounts/{username}")]
     public async Task<IActionResult> getAccounts(string username)
     {
@@ -73,6 +77,22 @@ public class CustomersController : ControllerBase
         }
     }
     
+    [Authorize(Roles = "Customer")]
+    [HttpGet("all-my-accounts")]
+    public async Task<IActionResult> getMyAccounts()
+    {
+        try
+        {
+            List<AccountViewModel> accountsViewModel = await _mediator.Send(new GetAllMyAccounts {} );
+            return Ok(accountsViewModel);
+        }
+        catch
+        {
+            return NotFound();
+        }
+    }
+    
+    [Authorize(Roles = "admin, Customer")]
     [HttpPost("create-transaction")]
     public async Task<IActionResult> CreateTransaction([FromForm] CreateTransaction command)
     {
@@ -87,6 +107,7 @@ public class CustomersController : ControllerBase
         }
     }
     
+    [Authorize(Roles = "admin, Employee")]
     [HttpPost("create-recurrent-transaction")]
     public async Task<IActionResult> CreateRecurrentTransaction([FromForm] CreateRecurrentTransaction command)
     {

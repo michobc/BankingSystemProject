@@ -5,5 +5,6 @@ namespace BankingSystemProject.Application.Commands;
 
 public class GetAllAccounts : IRequest<List<AccountViewModel>>
 {
-    public string username;
+    public string username { get; set; }
+    public string branch { get; set; }
 }

@@ -100,6 +100,16 @@ as well update the account (Withdrawal or Deposit)
 
 ![alt text](images/img5.png)
 
+### User Role and Access:
+
+Since roles are added to the JWT token, we just add a filter speciying the role that has access to a the specific endpoint that we want --Finished
+
+- admin can view and edit all data
+- employees can view all data but only create and edit data on there branch
+- customer can view there accounts and create transactions (deposit/withdrawal)
+
+// add endpoint to view Transactions --in progress
+
 ## Health Check:
 - Microsoft.Extensions.Diagnostics.HealthChecks
 - AspNetCore.HealthChecks.Npgsql

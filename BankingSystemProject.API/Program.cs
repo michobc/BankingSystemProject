@@ -55,6 +55,8 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<IKeycloakAuthService, KeycloakAuthService>();
 builder.Services.AddSingleton<ITenantService, TenantService>();
 builder.Services.AddScoped<IGetAllAccountsService, GetAllAccountsService>();
+builder.Services.AddScoped<IGetAllCustomersService, GetAllCustomersService>();
+builder.Services.AddScoped<IGetAllEmployeesService, GetAllEmployeesService>();
 builder.Services.AddScoped<TokenExtractor>();
 builder.Services.AddScoped<CalculatNextTransactionDate>();
 builder.Services.AddHttpContextAccessor();

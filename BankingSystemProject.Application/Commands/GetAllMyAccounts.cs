@@ -3,7 +3,6 @@ using MediatR;
 
 namespace BankingSystemProject.Application.Commands;
 
-public class GetAllCustomers: IRequest<List<CustomerViewModel>>
+public class GetAllMyAccounts: IRequest<List<AccountViewModel>>
 {
-    public string branch { get; set; }
 }
