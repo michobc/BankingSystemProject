@@ -136,4 +136,19 @@ public class CustomersController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    [Authorize(Roles = "admin")]
+    [HttpPost("rollback-transactions")]
+    public async Task<IActionResult> RoleBackTransactions([FromForm] RollBackTransactions command)
+    {
+        try
+        {
+            var transactionViewModel = await _mediator.Send(command, CancellationToken.None);
+            return Ok(transactionViewModel);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

@@ -108,7 +108,16 @@ Since roles are added to the JWT token, we just add a filter speciying the role 
 - employees can view all data but only create and edit data on there branch
 - customer can view there accounts and create transactions (deposit/withdrawal)
 
-// add endpoint to view Transactions --in progress
+// add endpoint to view Transactions
+
+### Extra:
+
+- admin can rollback transactions by entering the accountid, branchid and the date of which the transactions where made.
+#### logic WorkFlow:
+- search for the account
+- search for transactions for the account in the date specified
+- execute the opposite on the account (if deposit 50 => withdrawal 50 and vice versa)
+- delete transactions from db
 
 ## Health Check:
 - Microsoft.Extensions.Diagnostics.HealthChecks
