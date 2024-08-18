@@ -1,6 +1,7 @@
 using BankingSystemProject.API.Configurations;
 using BankingSystemProject.API.Settings;
 using BankingSystemProject.Application.Commands;
+using BankingSystemProject.Application.Consumer;
 using BankingSystemProject.Application.Mappings;
 using BankingSystemProject.Application.Services;
 using BankingSystemProject.Application.Services.Abstractions;
@@ -59,6 +60,8 @@ builder.Services.AddScoped<CalculatNextTransactionDate>();
 builder.Services.AddHttpContextAccessor();
 // Register RabbitMQ service
 builder.Services.AddSingleton<RabbitMqService>();
+builder.Services.AddSingleton<RabbitMqServiceEvent>();
+builder.Services.AddHostedService<RabbitMqConsumerEvent>();
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()

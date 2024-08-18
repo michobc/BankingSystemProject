@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CLkQH7PI485W6DrfdKTaUuSNzV6ZFTkYZdm7DRb9YGs90GO9pvaPiHEfyIAcMLI4skXKFBq4P05y/A67nqB59Q==",
+  "dgSpecHash": "QD/oUzcT7a+3gnYaMrrsCv8mDFaqADWqTNFLLtdRDq3ku3uy2vKPznY0sUXVqA25mkGIy/DccZdzWRJecIHWHQ==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/BankingSystemProject/BankingSystemProject.Application/BankingSystemProject.Application.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,9 @@
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.diagnostics.abstractions/8.0.0/microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.fileproviders.abstractions/8.0.0/microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.hosting.abstractions/8.0.0/microsoft.extensions.hosting.abstractions.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
@@ -31,6 +34,7 @@
     "/Users/michelbouchahine/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.4/npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.diagnostics.diagnosticsource/8.0.0/system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/system.identitymodel.tokens.jwt/8.0.1/system.identitymodel.tokens.jwt.8.0.1.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",

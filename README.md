@@ -89,9 +89,16 @@ potentially causing issues in the system.
 
 In the main API => employee will create a recurrent transaction for a customer account (the account specified could be on any branch of the bank) --done
 
-This recurrent transaction will be queued to the microservice, added to its database and will update the recurrent transaction when its time.
-The system will DAILY check to execute recurrent transactions --in progress
+This recurrent transaction will be queued to the microservice, added to its database and will update the recurrent transaction when it's time.
+The system will DAILY check to execute recurrent transactions --Done
 
+### Recurrent transaction workflow:
+- when employee adds recurrent transaction for a customers account (any branch where account is placed) this will be added to branch recurrent transaction table as well it will be queued
+to the microservice and added to its DB
+- the microservice will execute a daily background job to check for recurrent transactions updates, if any => these updated will be sent to the main api to update the recurrent transactions table 
+as well update the account (Withdrawal or Deposit)
+
+![alt text](images/img5.png)
 
 ## Health Check:
 - Microsoft.Extensions.Diagnostics.HealthChecks

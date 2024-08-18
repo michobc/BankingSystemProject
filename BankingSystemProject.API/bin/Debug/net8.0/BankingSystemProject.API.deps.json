@@ -1342,6 +1342,7 @@
           "BankingSystemProject.Persistence": "1.0.0",
           "MediatR": "12.4.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
           "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "8.0.1"
         },
