@@ -121,4 +121,19 @@ public class CustomersController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+    
+    [Authorize(Roles = "Customer")]
+    [HttpPost("{branch}/transactions/{accountid}")]
+    public async Task<IActionResult> ViewTransaction(int accountid, string branch)
+    {
+        try
+        {
+            var transactionViewModel = await _mediator.Send(new GetTransactions{ AccountId = accountid, Branch = branch});
+            return Ok(transactionViewModel);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }
